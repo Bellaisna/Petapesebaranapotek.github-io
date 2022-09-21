@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Apotek Sekitar Rumah</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+        <style> #map {
+            width: 1333px;
+            height: 500px;}
+            header {
+            background-color: #F8F8FF;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            }
+            footer {
+            background-color: #F8F8FF;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Peta Persebaran Apotek </h2>
+            <p>Persebaran Apotek kecamatan Sragen, Kabupaten Sargen Jawa Tengah</p>
+        </header>         
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([-7.4229875,111.0334382], 14);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 25,
+            attribution: '© OpenStreetMap'
+            }).addTo(map);
+            var marker = L.marker([-7.4229875,111.0334382]).bindPopup('Rumah Bela disini kawan').addTo(map);
+            var circle = L.circle([-7.4229875,111.0334382], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 1200
+            }).addTo(map);
+            var popup = L.popup();
+            function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("Koordinat disini " + e.latlng.toString())
+                .openOn(map);
+            }       
+            map.on('click', onMapClick)
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.422759618810325, 111.032654659524],{icon:markerl}).bindPopup('<b>Apotek Kurnia II</b><br>Tempat menjual dan meramu obat<br>Jl. Sukowati 391, Dusun Kebayanan Widodo 1, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.423897982566225, 111.03166760661202],{icon:markerl}).bindPopup('<b>Apotek Kimia Farma</b><br>Tempat menjual dan meramu obat<br>Jl. Sukowati No.440a, Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.421374591708838, 111.03820261282334],{icon:markerl}).bindPopup('<b>Apotek Bahari</b><br>Tempat menjual dan meramu obat<br>Jl. Perintis Kemerdekaan No.9A, Ngrandu, Nglorog, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.41994835661138, 111.03782744600903],{icon:markerl}).bindPopup('<b>Apotek Asri</b><br>Tempat menjual dan meramu obat<br> Jl. Perintis Kemerdekaan, Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.419813429253635, 111.03615169259139],{icon:markerl}).bindPopup('<b>Apotek Intisari</b><br>Tempat menjual dan meramu obat<br> Jl. Sukowati Gudang Kapuk No.542, Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.424024347106176, 111.03267992458105],{icon:markerl}).bindPopup('<b>Apotek Martonegaran</b><br>Tempat menjual dan meramu obat<br> Jl. Ring Road, Dusun Kebayanan Sragen Manggis, Sragen Wetan, Sragen').addTo(map);
+            
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.420376647498386, 111.03006518778612],{icon:markerl}).bindPopup('<b>Apotek Bunda</b><br>Tempat menjual dan meramu obat<br> Jl. Letjen Sutoyo No.27, Dusun Kebayanan Krajoyok, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.426501192050774, 111.02548980348158],{icon:markerl}).bindPopup('<b>Apotek Surya Husada</b><br>Tempat menjual dan meramu obat<br> Jl. Sukowati Karangdowo, Karang Duwo, Sragen Tengah, Sragen').addTo(map);
+            
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.427596697003693, 111.03473303925372],{icon:markerl}).bindPopup('<b>Apotek Athaya Farma</b><br>Tempat menjual dan meramu obat<br> Jl. HOS. Cokroaminoto No.38, Kebayanan Teguhan, Sragen Wetan, Sragen').addTo(map);
+
+            var markerl = L.icon({
+                iconUrl: './Ikon/medicine.png',
+                iconSize:[20,20],
+            })
+            L.marker([-7.431362819719256, 111.03859542021361],{icon:markerl}).bindPopup('<b>Apotek Sehat Farma Sragen</b><br>Tempat menjual dan meramu obat<br> Jl. R.A. Kartini, Candibaru, RT.35, RW.02, Sungkul, Plumbungan, Sragen').addTo(map);
+        </script>
+
+        <footer>
+            <p>Rachmanita Isna Salsabella</p>
+          </footer>
+          
+    </body>
+</html>
